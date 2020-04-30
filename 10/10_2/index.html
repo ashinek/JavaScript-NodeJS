@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>WS</title>
+	
+</head>
+<body>
+	<form action="">
+		<input type="text" id='message'>
+		<input type="submit" id='message' value="Wyślij">
+	</form>
+	<script>
+	var ws = new WebSocket('ws://localhost:3000');
+	ws.onmessage = function(msg) {
+		console.log(msg.data);
+	}
+	document.forms[0].onsubmit = function() {
+		var input = document.getElementById('message');
+	} 
+	</script>
+</body>
+</html>
